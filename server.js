@@ -37,7 +37,7 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-// require("./routes/apiRoutes.js")(app);
+// require("./routes/apiRoutes.js")(app); FUTURE TODO FOR CODE CLEANUP
 require("./routes/htmlRoutes.js")(app);
 
 // Database
@@ -54,12 +54,9 @@ db.once("open", function() {
   console.log("Connected to Mongoose!");
 });
 
-// if (process.env.NODE_ENV === "test") {
-//   syncOptions.force = true;
-// }
 var routes = require("./routes/htmlRoutes");
 app.use("/", routes);
-//Create localhost port
+
 app.listen(PORT, function() {
   console.log("Listening on PORT " + PORT);
 });

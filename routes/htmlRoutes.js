@@ -1,6 +1,5 @@
 var Comment = require("../models/Comment.js");
 var Article = require("../models/Article.js");
-// var request = require("request")
 var axios = require("axios");
 var cheerio = require("cheerio");
 
@@ -43,18 +42,14 @@ module.exports = function(app) {
     Article.findOne({ _id: articleId })
       .populate("comment")
       .exec(function(err, storedArticle) {
-        // console.log("Here's what I'm displaying: " + storedArticle);
         if (err) {
           throw err;
         } else {
           hbsObj.article = storedArticle;
-          // console.log(storedArticle)
-          // var link = storedArticle.link;
 
           axios
             .get(storedArticle.link)
             .then(function(response) {
-              // console.log(response.data)
               let $ = cheerio.load(response.data);
               $(".content-wrapper").each(function(i, element) {
                 hbsObj.body = $(element)
@@ -81,19 +76,16 @@ module.exports = function(app) {
         var result = {};
         var titlesArray = [];
         $(".sponsored-post").remove();
-        //title is done
-        console.log("begin scrape");
+        console.log("begin scrape " + i);
         result.title = $(this)
           .children("a.article-link")
           .find("h3.article-name")
           .text();
 
-        //link is done
         result.link = $(this)
           .children("a.article-link")
           .attr("href");
 
-        //img is done
         result.img = $(this)
           .children(".article-link")
           .children("article")
@@ -101,7 +93,6 @@ module.exports = function(app) {
           .children("figure")
           .attr("data-original");
 
-        //timestamp is done - needs formatting
         result.category = $(this)
           .children(".article-link")
           .children("article")
@@ -110,7 +101,6 @@ module.exports = function(app) {
           .find("span.free-text-label")
           .text();
 
-        //synopsis is done
         result.synopsis = $(element)
           .children(".article-link")
           .children("article")
