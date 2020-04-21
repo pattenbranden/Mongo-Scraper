@@ -2,7 +2,7 @@
 
 This application scrapes PCGAMER for news articles stores them with Mongoose for MongoDB for later viewing.
 You can also save articles to easily return to them later for more viewing by clicking the link, setting the stored object's favorite boolean to true.
-In addition, you can leave comments on articles, stored in their own collection and associated with the article.
+In addition, you can leave comments on articles, stored in their own collection and associated with the article.<br>
 View this application deployed here: https://pcgamer-scraper.herokuapp.com/articles
 
 Some notes from the developer(me): 
