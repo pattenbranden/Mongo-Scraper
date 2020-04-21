@@ -21,9 +21,9 @@
                 <a href="/readArticle/{{this._id}}" class="waves-effect waves-light btn" id="btnSignUp">Read Article</a>
                 <a href="{{this.link}}" class="waves-effect waves-light btn" id="btnSignUp">View Source</a>
                 {{#if article.favorite}}
-                <a data-articleId="{{article._id}}" class="btn btn-primary unsave-btn">Remove from saved</a>
+                <a data-articleId="{{this._id}}" class="btn btn-primary unsave-btn">Remove from saved</a>
                 {{else}}
-                <a data-articleId="{{article._id}}" class="btn btn-primary save-btn">Save this article</a>
+                <a data-articleId="{{this._id}}" class="btn btn-primary save-btn">Save this article</a>
                 {{/if}}
             </div>
 
