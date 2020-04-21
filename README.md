@@ -13,6 +13,6 @@ Some notes from the developer(me):
 
 Handlebars proved difficult this time, as I used @allow-prototype-methods. I will have to do more research, I believe Mongoose's .lean() will provide me the functionality I need without the security vulnerabilities. 
 
-It was my first time using Morgan, and that was a nicety I didn't know I was missing out on! It makes following how my application's redirects easy by checking my console to see what routes my application was hitting.
+It was my first time using Morgan, and that was a nicety I didn't know I was missing out on! It makes following how my application redirects easy by checking my console to see what routes my application was hitting.
 
 TODOs: Split up routes so it's less of a mess. Replace @allow-prototype-access for Handlebars with .lean(), clean up the page's display so it provides more information per scroll.
